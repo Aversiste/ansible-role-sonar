@@ -123,9 +123,6 @@
   notify: restart sonar
 
 - include: plugins.yml
-  when:
-    - sonar_token != ""
-    - sonar_application_version.stat.exists
 
 - name: Ensure Sonar is running and set to start on boot.
   service: name=sonar state=started enabled=yes
